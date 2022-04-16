@@ -22,7 +22,7 @@ jobs:
       - run:
           name: Build
           #command: mvn -B -DskipTests clean package
-		  command: mvn clean
+	  command: mvn clean
 		  
       # Then run your tests!
       - run:
