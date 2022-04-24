@@ -26,7 +26,7 @@ jobs:
       # Use mvn clean and package as the standard maven build phase
       - run:
           name: Build
-          command: mvn clean
+          command: mvn clean --file *.pom
 
       - save_cache:
           paths:
