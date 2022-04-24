@@ -18,10 +18,21 @@ jobs:
     steps:
       # Checkout the code as the first step.
       - checkout
+      # Download and cache dependencies
+
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "pom.xml" }}
       # Use mvn clean and package as the standard maven build phase
       - run:
           name: Build
           command: mvn clean
+
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: v1-dependencies-{{ checksum "pom.xml" }}
+          
       # Then run your tests!
       - run:
           name: Test
