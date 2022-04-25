@@ -32,6 +32,7 @@ jobs:
           paths:
             - ~/.m2
           key: v1-dependencies-{{ checksum "mon-appli/pom.xml" }}
+
       # Then run your tests!
       - run:
           name: Test
