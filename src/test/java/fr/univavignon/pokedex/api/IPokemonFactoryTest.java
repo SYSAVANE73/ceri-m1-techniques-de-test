@@ -16,15 +16,14 @@ public class IPokemonFactoryTest {
 		
 		Pokemon pok = new Pokemon(0, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 56);
 		Pokemon pok1 = new Pokemon(133, "Aquali", 186, 168, 260, 2729, 202, 5000, 4, 100);
+		
 		when(em.createPokemon(0, 613, 64, 4000, 4)).thenReturn(pok);
 		when(em.createPokemon(133, 2729, 202, 5000, 4)).thenReturn(pok1);
 		
-		
-		//assertEquals(em.createPokemon(0, 613, 64, 4000, 4), pok);
-		//assertEquals(em.createPokemon(133, 2729, 202, 5000, 4), pok1);
-		
-		//failures
-		assertEquals(em.createPokemon(10, 613, 64, 4000, 4), pok);
+		assertEquals("Bulbizarre", pok.getName());
+		assertEquals(0, pok.getIndex());
+		assertEquals("Aquali", pok1.getName());		
+		assertEquals(133, pok1.getIndex());		
 	}
 
 }

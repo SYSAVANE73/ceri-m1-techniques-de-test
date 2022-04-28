@@ -5,6 +5,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import org.junit.Test;
+import org.mockito.Mockito;
 
 public class IPokemonMetadataProviderTest {
 	
@@ -16,13 +17,15 @@ public class IPokemonMetadataProviderTest {
 		PokemonMetadata pok = new PokemonMetadata(0, "Bulbizarrz", 126, 126, 90);
 		PokemonMetadata pok2 = new PokemonMetadata(133, "Aquali", 186, 168, 260);
 		
-		when(em.getPokemonMetadata(0)).thenReturn(assertExeption(133));
+		when(em.getPokemonMetadata(Mockito.anyInt())).thenReturn(assertExeption(0));
 		
+		assertEquals("Bulbizarrz", pok.getName());
 		assertEquals("Aquali", pok2.getName());
 	}
 	
 	
 	public PokemonMetadata assertExeption(int index) throws PokedexException{
+		
 		if(index == 0) {
 			return new PokemonMetadata(0,"Bulbizarre",126,126,90);
 		}

@@ -8,23 +8,33 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.mockito.*;
 
 public class IPokedexTest {
+	public static List<Pokemon> pokedex;
+	IPokedex em;
+	IPokemonMetadataProvider pokMeta;
+	IPokemonFactory pokfac;
+	IPokemonMetadataProvider meta;
 	
-	public static List<Pokemon> pokedex = new ArrayList<Pokemon>();
-	IPokedex em = mock(IPokedex.class);
-	IPokemonMetadataProvider pokMeta = mock(IPokemonMetadataProvider.class);
-	IPokemonFactory pokfac = mock(IPokemonFactory.class);
-	IPokemonMetadataProvider meta = mock(IPokemonMetadataProvider.class);
+	@Before
+	public void init() {
+		em = mock(IPokedex.class);
+		pokfac = mock(IPokemonFactory.class);
+		meta = mock(IPokemonMetadataProvider.class);
+		pokedex = new ArrayList<Pokemon>();
+    }
+	
+	
 	
 	@Test
 	public void size() {
 		addPokemon();
 		when(em.size()).thenReturn(pokedex.size());
-		
-		assertEquals(em.size(), 4);
+		assertEquals(em.size(), 2);
+		assertEquals(em.size(), pokedex.size());
 	}
 	
 	@Test
@@ -46,29 +56,22 @@ public class IPokedexTest {
 	@Test
 	public void getPokemon() throws PokedexException {
 		addPokemon();
-		Pokemon pok3 = pokfac.createPokemon(0, 613, 64, 4000, 4);
 		
-		when(pokedex.get(0)).thenReturn(getPokemonIndex(0));
-		assertEquals(pokedex.get(0), pokfac.createPokemon(0, 613, 64, 4000, 4));
-		//assertEquals(pokedex.get(0), pokfac.createPokemon(133, 2729, 202, 5000, 4));
+		when(em.getPokemon(Mockito.anyInt())).thenReturn(getPokemonIndex(0));
+		assertEquals(pokedex.get(0), getPokemonIndex(0));
+		assertEquals(pokedex.get(1), getPokemonIndex(133));
+		//assertEquals(em.getPokemon(0), pokfac.createPokemon(0, 613, 64, 4000, 4));
 	}
 	
 	public Pokemon getPokemonIndex(int index) throws PokedexException {
 		for(int i=0;i<pokedex.size();i++) {
 			if(pokedex.get(i).getIndex() == index) {
-				//System.out.println(pokedex.get(i).getIndex());
 				return pokedex.get(i);
 			}
 		}
-		//throw new PokedexException("n'existe pas");
-		return null;
+		throw new PokedexException("Index doit etre entre 0 et 150");	
 	}
 	
-	/**
-	 * Returns an unmodifiable list of all pokemons this pokedex contains.
-	 * 
-	 * @return Unmodifiable list of all pokemons.
-	 */
 	@Test
 	public void getPokemons()  {
 		addPokemon();
@@ -80,19 +83,9 @@ public class IPokedexTest {
 		 
 		Pokemon pok2 = new Pokemon(133, "Aquali", 186, 168, 260, 2729, 202, 5000, 4, 100);
 		listPokemon.add(pok2);
-		System.out.println(listPokemon.size());
+		
 		when(pokedex.get(0).getIndex()).thenReturn(listPokemon.get(0).getIndex());
 		assertEquals(pokedex.get(1).getIndex(), 133);
 	}
-	//List<Pokemon> getPokemons();
-
-	/**
-	 * Returns an unmodifiable list of all pokemons this pokedex contains.
-	 * The list view will be sorted using the given <tt>order</tt>.
-	 * 
-	 * @param order Comparator instance used for sorting the created view.
-	 * @return Sorted unmodifiable list of all pokemons.
-	 */
-	//List<Pokemon> getPokemons(Comparator<Pokemon> order);
 
 }
