@@ -27,8 +27,6 @@ public class IPokedexTest {
 		pokedex = new ArrayList<Pokemon>();
     }
 	
-	
-	
 	@Test
 	public void size() {
 		addPokemon();
