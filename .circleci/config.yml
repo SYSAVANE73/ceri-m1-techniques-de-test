@@ -25,7 +25,7 @@ jobs:
 
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "mon-appli/pom.xml" }}
+          - v1-dependencies-{{ checksum "pom.xml" }}
       # Use mvn clean and package as the standard maven build phase
       - run:
           name: Build
@@ -51,7 +51,6 @@ workflows:
           filters:
             branches:
               only: master
-          
   upload-to-codecov:
     jobs:
       - node/test:
