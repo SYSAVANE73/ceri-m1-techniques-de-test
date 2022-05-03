@@ -34,7 +34,7 @@ jobs:
       - save_cache:
           paths:
             - ~/.m2
-          key: v1-dependencies-{{ checksum "mon-appli/pom.xml" }}
+          key: v1-dependencies-{{ checksum "pom.xml" }}
 
       # Then run your tests!
       - run:
@@ -51,7 +51,6 @@ workflows:
           filters:
             branches:
               only: master
-          version: '2.1'
           
   upload-to-codecov:
     jobs:
