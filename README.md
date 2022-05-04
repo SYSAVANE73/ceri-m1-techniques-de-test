@@ -15,6 +15,8 @@ Technique de test
 
 [![CircleCI](https://circleci.com/gh/SYSAVANE73/ceri-m1-techniques-de-test.svg?style=svg&circle-token=15c59c33-632a-40d0-8a4f-ab6be7ddf9f6)](https://app.circleci.com/pipelines/github/SYSAVANE73/ceri-m1-techniques-de-test)
 
+[![CircleCI](https://circleci.com/gh/SYSAVANE73/ceri-m1-techniques-de-test/tree/master.svg?style=svg)](https://circleci.com/gh/SYSAVANE73/ceri-m1-techniques-de-test/tree/master)
+
 [![Coverage Status](https://codecov.io/gh/SYSAVANE73/ceri-m1-techniques-de-test/badge.svg?branch=master)](https://coveralls.io/github/SYSVAANE73/ceri-m1-techniques-de-test?branch=master)
 
 
