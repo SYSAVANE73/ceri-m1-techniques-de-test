@@ -122,6 +122,7 @@
 				</executions>
 			</plugin>
 		</plugins>
+		
 		<extensions>
 			<!-- begin - needed for deploying to repository using webdav -->
 			<extension>
