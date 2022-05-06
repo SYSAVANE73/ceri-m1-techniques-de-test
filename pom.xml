@@ -132,7 +132,7 @@
 			<!-- end - needed for deploying to repository using webdav -->
 		</extensions>
 	</build>
-	
+	<!-- 
 	<reporting>
       <plugins>
         <plugin>
@@ -149,19 +149,19 @@
         </plugin>
       </plugins>
     </reporting>
-    <!--  
+    -->
+    
 	<reporting>
 		<plugins>
-	    	<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-checkstyle-plugin</artifactId>
+	      	<plugin>
+		  		<groupId>org.apache.maven.plugins</groupId>
+          		<artifactId>maven-checkstyle-plugin</artifactId>
+          		<version>3.1.2</version>
 				<configuration>
-					<outputFileFormat>xml</outputFileFormat>
 					<includeTestSourceDirectory>true</includeTestSourceDirectory>
-						<configLocation>checkstyle-result-test.xml</configLocation>
-					</configuration>
+				</configuration>
 				</plugin>
 		</plugins>
 	</reporting>
-	-->
+	
 </project>
