@@ -138,9 +138,11 @@
 		<plugin>
       		<groupId>org.apache.maven.plugins</groupId>
 			<artifactId>maven-checkstyle-plugin</artifactId>
+			
 			<configuration>
-				<includeTestSourceDirectory>true</includeTestSourceDirectory>
-			</configuration>	
+				<sourceDirectory>${project.build.testSourceDirectory}</sourceDirectory>
+				<outputFile>checkstyle-result-test.xml</outputFile>
+			</configuration>				
     	</plugin>
 	</plugins>
 	</reporting>
