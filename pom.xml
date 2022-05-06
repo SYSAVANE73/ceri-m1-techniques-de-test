@@ -135,15 +135,16 @@
 	<reporting>
 	<plugins>
 		<!-- ajout du plugin checkstyle -->
-		<plugin>
-      		<groupId>org.apache.maven.plugins</groupId>
+    	<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
 			<artifactId>maven-checkstyle-plugin</artifactId>
 			
 			<configuration>
-				<sourceDirectory>${project.build.testSourceDirectory}</sourceDirectory>
-				<outputFile>checkstyle-result-test.xml</outputFile>
-			</configuration>				
-    	</plugin>
+				<outputFileFormat>xml</outputFileFormat>
+				<includeTestSourceDirectory>true</includeTestSourceDirectory>
+					<configLocation>checkstyle-result-test.xml</configLocation>
+				</configuration>
+			</plugin>
 	</plugins>
 	</reporting>
 </project>
