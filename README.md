@@ -21,39 +21,9 @@ Technique de test
 
 [![codecov](https://codecov.io/gh/SYSAVANE73/ceri-m1-techniques-de-test/branch/master/graph/badge.svg?token=W2A575BX62)](https://codecov.io/gh/SYSAVANE73/ceri-m1-techniques-de-test)
 
-![Checkstyle](target/site/badges/checkstyle-result.svg)
+![Checkstyle](target/site/checkstyle-result.svg)
 
 
-
-<build>
-	<plugins>
-		<!-- Generate badges. -->
-		<plugin>
-			<groupId>com.github.bordertech.buildtools</groupId>
-			<artifactId>badger</artifactId>
-			<version>1.0.0</version>
-			<executions>
-				<execution>
-					<phase>post-site</phase>
-					<goals>
-						<goal>badges</goal>
-					</goals>
-					<configuration>
-						<skip>${badges.skip}</skip>
-						<outputDir>target/site/badges</outputDir>
-						<inputFiles>
-							<inputFile>target/pmd.xml</inputFile>
-							<inputFile>target/findbugs-report.xml</inputFile>
-							<inputFile>target/findbugsXml.xml</inputFile>
-							<inputFile>target/checkstyle-result.xml</inputFile>
-							<inputFile>target/coverage-report.xml</inputFile>
-						</inputFiles>
-					</configuration>
-				</execution>
-			</executions>
-		</plugin>
-	</plugins>
-</build>
 
 # UCE Génie Logiciel Avancé : Techniques de tests
 
