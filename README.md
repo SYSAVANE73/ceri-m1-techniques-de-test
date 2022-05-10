@@ -17,12 +17,43 @@ Technique de test
 
 [![CircleCI](https://circleci.com/gh/SYSAVANE73/ceri-m1-techniques-de-test/tree/master.svg?style=svg)](https://circleci.com/gh/SYSAVANE73/ceri-m1-techniques-de-test/tree/master)
 
+[![CircleCI](https://circleci.com/gh/SYSAVANE73/ceri-m1-techniques-de-test/tree/master.svg?style=svg)](https://circleci.com/gh/SYSAVANE73/ceri-m1-techniques-de-test/tree/master)
 
 <!--[![Coverage Status](https://codecov.io/gh/SYSAVANE73/ceri-m1-techniques-de-test/badge.svg?branch=master)](https://coveralls.io/github/SYSVAANE73/ceri-m1-techniques-de-test?branch=master)-->
 
 [![codecov](https://codecov.io/gh/SYSAVANE73/ceri-m1-techniques-de-test/branch/master/graph/badge.svg?token=W2A575BX62)](https://codecov.io/gh/SYSAVANE73/ceri-m1-techniques-de-test)
 
 
+
+<build>
+	<plugins>
+		<!-- Generate badges. -->
+		<plugin>
+			<groupId>com.github.bordertech.buildtools</groupId>
+			<artifactId>badger</artifactId>
+			<version>1.0.0</version>
+			<executions>
+				<execution>
+					<phase>post-site</phase>
+					<goals>
+						<goal>badges</goal>
+					</goals>
+					<configuration>
+						<skip>${badges.skip}</skip>
+						<outputDir>target/site/badges</outputDir>
+						<inputFiles>
+							<inputFile>target/pmd.xml</inputFile>
+							<inputFile>target/findbugs-report.xml</inputFile>
+							<inputFile>target/findbugsXml.xml</inputFile>
+							<inputFile>target/checkstyle-result.xml</inputFile>
+							<inputFile>target/coverage-report.xml</inputFile>
+						</inputFiles>
+					</configuration>
+				</execution>
+			</executions>
+		</plugin>
+	</plugins>
+</build>
 
 # UCE Génie Logiciel Avancé : Techniques de tests
 
