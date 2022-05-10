@@ -17,11 +17,11 @@ Technique de test
 
 [![CircleCI](https://circleci.com/gh/SYSAVANE73/ceri-m1-techniques-de-test/tree/master.svg?style=svg)](https://circleci.com/gh/SYSAVANE73/ceri-m1-techniques-de-test/tree/master)
 
-[![CircleCI](https://circleci.com/gh/SYSAVANE73/ceri-m1-techniques-de-test/tree/master.svg?style=svg)](https://circleci.com/gh/SYSAVANE73/ceri-m1-techniques-de-test/tree/master)
-
 <!--[![Coverage Status](https://codecov.io/gh/SYSAVANE73/ceri-m1-techniques-de-test/badge.svg?branch=master)](https://coveralls.io/github/SYSVAANE73/ceri-m1-techniques-de-test?branch=master)-->
 
 [![codecov](https://codecov.io/gh/SYSAVANE73/ceri-m1-techniques-de-test/branch/master/graph/badge.svg?token=W2A575BX62)](https://codecov.io/gh/SYSAVANE73/ceri-m1-techniques-de-test)
+
+![Checkstyle](target/site/badges/checkstyle-result.svg)
 
 
 
