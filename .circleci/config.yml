@@ -42,7 +42,7 @@ jobs:
       - codecov/upload
       - run:
           name : checkstyle
-          command : mvn surefire-report:report
+          command : mvn checkstyle:checkstyle
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
