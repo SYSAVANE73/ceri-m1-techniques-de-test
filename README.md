@@ -21,7 +21,7 @@ Technique de test
 
 [![codecov](https://codecov.io/gh/SYSAVANE73/ceri-m1-techniques-de-test/branch/master/graph/badge.svg?token=W2A575BX62)](https://codecov.io/gh/SYSAVANE73/ceri-m1-techniques-de-test)
 
-![Checkstyle](target/site/checkstyle-result.svg)
+![Checkstyle](target/site/badges/checkstyle-result.svg)
 
 
 
