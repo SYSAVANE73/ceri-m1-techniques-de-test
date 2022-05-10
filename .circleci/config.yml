@@ -39,6 +39,11 @@ jobs:
       - run:
           name: Test
           command: mvn test
+      # execution de checkstyle
+      - run:
+          name: CheckStyle
+          command : mvn -DskipTests checkstyle:checkstyle
+
       - codecov/upload
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
