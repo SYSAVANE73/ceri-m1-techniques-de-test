@@ -33,6 +33,12 @@
 			<version>3.1</version>
 			<type>maven-plugin</type>
 		</dependency>
+		
+		<dependency>
+        	<groupId>com.puppycrawl.tools</groupId>
+            <artifactId>checkstyle</artifactId>
+            <version>10.1</version>
+        </dependency>
 	</dependencies>
 
 	<build>
@@ -122,27 +128,40 @@
 				</executions>
 			</plugin>
 			
-			<!--  plugin checkstyle
-			
+			<!--  generation checkstyle -->
 			<plugin>
-      			<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-checkstyle-plugin</artifactId>
-				<version>3.1.2</version>
-				<configuration>
-					<sourceDirectory>${project.build.testSourceDirectory}</sourceDirectory>
-					<outputFile>checkstyle-result-test.xml</outputFile>
-				</configuration>	
-					<executions>
-						<execution>
-							<id>CheckstyleUnitTests</id>
-								<phase>site</phase>
-								<goals>
-									<goal>checkstyle</goal>
-								</goals>
-							</execution>
-						</executions>
-      		</plugin>
-      		-->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>3.1.2</version>
+                <executions>
+                    <execution>
+                        <phase>process-classes</phase>
+                        <goals>
+                            <goal>checkstyle</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- Generate checkstyle badge. -->
+            <plugin>
+                <groupId>com.github.bordertech.buildtools</groupId>
+                <artifactId>badger</artifactId>
+                <version>1.0.0</version>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>badges</goal>
+                        </goals>
+                        <configuration>
+                            <outputDir>target/site/badges/</outputDir>
+                            <inputFiles>
+                                <inputFile>target/checkstyle-result.xml</inputFile>
+                            </inputFiles>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
 		</plugins>
 		
 		<extensions>
@@ -155,54 +174,18 @@
 			<!-- end - needed for deploying to repository using webdav -->
 		</extensions>
 	</build>
-	<!-- 
-	<reporting>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-checkstyle-plugin</artifactId>
-          <version>3.1.2</version>
-          <reportSets>
-            <reportSet>
-              <reports>
-                <report>checkstyle</report>
-              </reports>
-            </reportSet>
-          </reportSets>
-        </plugin>
-      </plugins>
-    </reporting>
-    -->
+	
 	<reporting>
 		<plugins>
-			
-			<plugin>
-	          <groupId>org.apache.maven.plugins</groupId>
-	          	<artifactId>maven-checkstyle-plugin</artifactId>
-	          	<version>3.1.2</version>
-	          <reportSets>
-	            <reportSet>
-	              <reports>
-	                <report>checkstyle</report>
-	              </reports>
-	            </reportSet>
-	          </reportSets>
-	        </plugin>
-        	<!--  
-	      	<plugin>
-		  		<groupId>org.apache.maven.plugins</groupId>
-          		<artifactId>maven-checkstyle-plugin</artifactId>
-          		<version>3.1.2</version>
-				<configuration>
-					<includeTestSourceDirectory>true</includeTestSourceDirectory>
-				</configuration>
-			</plugin>
-			-->
-			<plugin>
-        		<groupId>org.apache.maven.plugins</groupId>
-        		<artifactId>maven-surefire-report-plugin</artifactId>
-        		<version>3.0.0-M6</version>
-      		</plugin>
+      		<plugin>
+	            <groupId>org.apache.maven.plugins</groupId>
+	            <artifactId>maven-checkstyle-plugin</artifactId>
+	            <version>3.1.2</version>
+	            <configuration>
+	                <configLocation>checkstyle.xml</configLocation>
+	            </configuration>
+        	</plugin>
     	</plugins>
 	</reporting>
+	
 </project>
