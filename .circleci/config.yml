@@ -46,7 +46,7 @@ jobs:
       # execution de javadoc
       - run:
           name: Javadoc
-          command: mvn javadoc:javadoc
+          command: mvn -DskipTests javadoc:javadoc
         
       - codecov/upload
 # Invoke jobs via workflows
