@@ -39,7 +39,9 @@ public class PokemonMetadata {
 		this.stamina = stamina;
 	}
 	
-	/** Index getter. **/
+	/** Index getter. *
+	 * @return index
+	*/
 	public int getIndex() {
 		return index;
 	}
