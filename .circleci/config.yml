@@ -43,7 +43,11 @@ jobs:
       - run:
           name: CheckStyle
           command : mvn -DskipTests checkstyle:checkstyle
-
+      # execution de javadoc
+      - run:
+          name: Javadoc
+          command: mvn javadoc:javadoc
+        
       - codecov/upload
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
