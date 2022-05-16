@@ -46,6 +46,12 @@
             <version>3.3.2</version>
             <type>maven-plugin</type>
         </dependency>
+        
+        <dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-collections4</artifactId>
+			<version>4.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -176,7 +182,6 @@
 	        	<version>3.3.2</version>
 	        	<configuration>
 				<source>8</source>
-				<detectJavaApiLink>false</detectJavaApiLink>
 	          		<show>private</show>
 	          		<nohelp>true</nohelp>
 	        	</configuration>
@@ -210,8 +215,7 @@
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>3.3.2</version>
                 <configuration>
-			<source>8</source>
-			<detectJavaApiLink>false</detectJavaApiLink>
+				<source>8</source>
           		<stylesheetfile>${basedir}/src/main/javadoc/stylesheet.css</stylesheetfile>
           		<show>public</show>
         		</configuration>
