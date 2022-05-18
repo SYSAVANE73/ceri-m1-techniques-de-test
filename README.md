@@ -23,7 +23,6 @@ Technique de test
 
 ![Checkstyle](target/site/badges/checkstyle-result.svg)
 
-# Javadoc
 
 [![javadoc](https://javadoc.io/badge2/org.springframework/spring-core/javadoc.svg)](https://SYSAVANE73.github.io/ceri-m1-techniques-de-test/)
 
