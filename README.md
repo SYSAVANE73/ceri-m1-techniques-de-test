@@ -25,7 +25,7 @@ Technique de test
 
 [![javadoc](https://javadoc.io/badge2/org.springframework/spring-core/javadoc.svg)](https://javadoc.io/doc/org.springframework/spring-core) 
 
-[![javadoc](https://javadoc.io/badge2/org.springframework/spring-core/javadoc.svg)](https://SYSAVANE73.github.io/ceri-m1-techniques-de-test/target/site/apidocs/)
+[![javadoc](https://javadoc.io/badge2/org.springframework/spring-core/javadoc.svg)](https://SYSAVANE73.github.io/ceri-m1-techniques-de-test/)
 
 
 
