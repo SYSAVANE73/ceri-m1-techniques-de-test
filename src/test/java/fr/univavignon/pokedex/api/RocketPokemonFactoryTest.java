@@ -6,10 +6,13 @@ import static org.mockito.Mockito.when;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mockito;
+import org.mockito.invocation.InvocationOnMock;
+import org.mockito.stubbing.Answer;
 
 public class RocketPokemonFactoryTest {
 	RocketPokemonFactory rock;
-	Pokemon pok, pok1;
+	Pokemon pok, pok1, pok2, pok3, pok4;
 	
 	
 	@Before
@@ -17,28 +20,31 @@ public class RocketPokemonFactoryTest {
 		rock = new RocketPokemonFactory();
 		pok = new Pokemon(0, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 56);
 		pok1 = new Pokemon(133, "Aquali", 186, 168, 260, 2729, 202, 5000, 4, 100);
+		pok2 = rock.createPokemon(-1, 0, 0, 0, 0);
+		pok3 = rock.createPokemon(1, 0, 0, 0, 0);
     }
-	/*
+	
 	@Test
 	public void createPokemon() {
+					
+		assertEquals(0, pok.getIndex());	
+		assertEquals("Bulbizarre", pok.getName());	
 		
-		when(em.createPokemon(0, 613, 64, 4000, 4)).thenReturn(pok);
-		when(em.createPokemon(133, 2729, 202, 5000, 4)).thenReturn(pok1);
-		
-		
-		assertEquals(0, pok.getIndex());
-		assertEquals(126, pok.getAttack());	
-		assertEquals(90, pok.getStamina());
-		assertEquals(613, pok.getCp());
-		assertEquals(4, pok.getCandy());
-		assertEquals(56,00, pok.getIv());	
-		
-		assertEquals("Aquali", pok1.getName());		
 		assertEquals(133, pok1.getIndex());	
-		assertEquals(5000, pok1.getDust());	
-		assertEquals(168, pok1.getDefense());
-		assertEquals(202, pok1.getHp());	
+		assertEquals("Aquali", pok1.getName());	
 		
+		assertEquals(1000, pok2.getAttack());
+		assertEquals("Ash's Pikachu", pok2.getName());
+		
+		assertEquals(49, pok3.getAttack());
+		assertEquals("Bulbasaur", pok3.getName());
+		
+		/*
+		 * failed
+		 */
+		//assertEquals(100, pok3.getAttack());
 	}
-*/
+	
+	
+
 }
