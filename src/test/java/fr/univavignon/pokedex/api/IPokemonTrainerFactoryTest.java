@@ -55,10 +55,11 @@ public class IPokemonTrainerFactoryTest {
     			);
         
 		
-		assertEquals(poktraine1.getName(), "Ahmed" );
-		assertEquals(poktraine1.getTeam(), team.valueOf("MYSTIC"));
-		assertEquals(poktraine2.getName(), "Ghiz");
-		assertEquals(poktraine2.getTeam(), team.valueOf("VALOR"));
+		assertEquals("Ahmed", poktraine1.getName());
+		assertEquals(team.valueOf("MYSTIC"), poktraine1.getTeam());
+		assertEquals("Ghiz", poktraine2.getName());
+		assertEquals(team.valueOf("VALOR"), poktraine2.getTeam());
+		assertEquals(pokedex, poktraine2.getPokedex());
 		/*
 		 * failure
 		 */

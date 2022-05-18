@@ -6,6 +6,9 @@ import java.util.Random;
 
 import org.apache.commons.collections4.map.UnmodifiableMap;
 
+import fr.univavignon.pokedex.api.IPokemonFactory;
+import fr.univavignon.pokedex.api.Pokemon;
+
 public class RocketPokemonFactory implements IPokemonFactory {
 	
 	private static Map<Integer, String> index2name;

@@ -51,7 +51,11 @@ public class IPokemonMetadataProviderTest {
     			);
 		
 		assertEquals("Bulbizarre", pok.getName());
+		assertEquals(126, pok.getAttack());
+		assertEquals(90, pok.getStamina());
 		assertEquals("Aquali", pok2.getName());
+		assertEquals(168, pok2.getDefense());
+		
 		//assertEquals(em.getPokemonMetadata(28).getIndex(), 28);
 		
 		/*

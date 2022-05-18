@@ -26,9 +26,18 @@ public class IPokemonFactoryTest {
 		when(em.createPokemon(133, 2729, 202, 5000, 4)).thenReturn(pok1);
 		
 		assertEquals(0, pok.getIndex());
+		assertEquals(126, pok.getAttack());	
+		assertEquals(90, pok.getStamina());
+		assertEquals(613, pok.getCp());
+		assertEquals(4, pok.getCandy());
+		assertEquals(56,00, pok.getIv());	
+		
 		assertEquals("Aquali", pok1.getName());		
 		assertEquals(133, pok1.getIndex());	
-		assertEquals(4000, pok.getDust());	
+		assertEquals(5000, pok1.getDust());	
+		assertEquals(168, pok1.getDefense());
+		assertEquals(202, pok1.getHp());	
+		
 		/*
 		 * failure
 		 */
