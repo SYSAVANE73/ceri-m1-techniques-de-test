@@ -60,7 +60,7 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: docs/
+          at: docs/_build
       - add_ssh_keys:
           fingerprints:
           - "96:8d:41:3a:27:c4:3a:00:95:bd:5e:74:19:f3:01:83"
