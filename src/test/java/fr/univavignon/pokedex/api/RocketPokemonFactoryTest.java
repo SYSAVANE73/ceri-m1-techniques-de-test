@@ -21,7 +21,7 @@ public class RocketPokemonFactoryTest {
 		pok = new Pokemon(0, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 56);
 		pok1 = new Pokemon(133, "Aquali", 186, 168, 260, 2729, 202, 5000, 4, 100);
 		pok2 = rock.createPokemon(-1, 0, 0, 0, 0);
-		pok3 = rock.createPokemon(1, 0, 0, 0, 0);
+		pok3 = rock.createPokemon(1, 50, 0, 0, 0);
 		pok4 = rock.createPokemon(10, 20, 30, 40, 50);
     }
 	
@@ -37,7 +37,7 @@ public class RocketPokemonFactoryTest {
 		assertEquals(1000, pok2.getAttack());
 		assertEquals("Ash's Pikachu", pok2.getName());
 		
-		assertEquals(49, pok3.getAttack());
+		assertEquals(50, pok3.getCp());
 		assertEquals("Bulbasaur", pok3.getName());
 		
 		assertEquals(10, pok4.getIndex());
